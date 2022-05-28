@@ -14,6 +14,7 @@ public class TrashMover : MonoBehaviour
     Vector3 newDestination, newRotation;
 
     float timer = 0;
+    float rotation = 0;
 
     void Awake()
     {
@@ -24,19 +25,32 @@ public class TrashMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, newDestination, Time.deltaTime * moveSpeed);
+        if (transform.position.Equals(newDestination))
+        {
+            generateNewDestination();
+        }
+        else
+        {
+            //transform.position = Vector3.MoveTowards(transform.position, newDestination, Time.deltaTime * moveSpeed);
+            transform.Translate(newDestination * Time.deltaTime * moveSpeed);
+        }
 
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(newRotation), Time.deltaTime * rotateSpeed);
+        //transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(newRotation), Time.deltaTime * rotateSpeed);
 
+        Debug.Log(newDestination);
+
+        transform.GetChild(0).rotation = Quaternion.Euler(newRotation);
         timer += Time.deltaTime;
 
         if(timer >= timeToChangeDirection)
         {
             generateNewDestination();
             changeRotation();
+           
         }
+        rotate();
 
-        
+
     }
 
     void generateNewDestination()
@@ -50,6 +64,14 @@ public class TrashMover : MonoBehaviour
 
     void changeRotation()
     {
-        newRotation = new Vector3(Random.Range(-359, 359), Random.Range(-359, 359), Random.Range(-359, 359));
+        //newRotation = new Vector3(Random.Range(-359, 359), Random.Range(-359, 359), Random.Range(-359, 359));
+        newRotation = new Vector3(transform.rotation.x, Random.Range(-359, 359), transform.rotation.z);
+
+    }
+
+    void rotate()
+    {
+        rotation += 0.05f;
+        newRotation = new Vector3(transform.rotation.x + rotation, transform.position.y + rotation, transform.rotation.z + rotation);
     }
 }
