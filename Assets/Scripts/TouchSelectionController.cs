@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 
+[RequireComponent(typeof(TrashManager))]
 public class TouchSelectionController : MonoBehaviour
 {
 
     [SerializeField] private Camera arCamera;
+    TrashManager manager;
 
-
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        manager = GetComponent<TrashManager>();
     }
 
     // Update is called once per frame
@@ -32,6 +32,7 @@ public class TouchSelectionController : MonoBehaviour
                     if(hitGameObject.tag.Equals("Destructable"))
                     {
                         Destroy(hitGameObject);
+                        manager.numberOfObjects--;
                     }
                 }
             }

@@ -533,8 +533,9 @@ GameObject:
   - component: {fileID: 1246071877}
   - component: {fileID: 1246071876}
   - component: {fileID: 1246071878}
+  - component: {fileID: 1246071879}
   m_Layer: 0
-  m_Name: Controller
+  m_Name: TrashController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -583,6 +584,20 @@ MonoBehaviour:
   maxRange: 5
   minRange: -5
   spawnTime: 2
+  numberOfObjects: 0
+--- !u!114 &1246071879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246071875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f66c0fdcda87e104b91bdc3294bffde5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfObjects: 0
 --- !u!4 &212175866532230322
 Transform:
   m_ObjectHideFlags: 0

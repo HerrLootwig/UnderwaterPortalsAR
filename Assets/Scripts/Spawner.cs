@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(TrashManager))]
 public class Spawner : MonoBehaviour
 {
     [SerializeField] GameObject prefab;
@@ -15,11 +16,14 @@ public class Spawner : MonoBehaviour
 
     float timer = 0;
 
-    int numberOfObjects;
+    TrashManager manager;
+    public int numberOfObjects;
 
     private void Awake()
     {
+        manager = GetComponent<TrashManager>();
         createObject();
+        manager.numberOfObjects++;
     }
 
     // Update is called once per frame
@@ -27,9 +31,11 @@ public class Spawner : MonoBehaviour
     {
         timer += Time.deltaTime; 
 
-        if(timer >= spawnTime)
+        if(timer >= spawnTime && manager.allowMoreObjects())
         {
             createObject();
+            timer = 0;
+            manager.numberOfObjects++;
         }
 
     }
@@ -50,7 +56,5 @@ public class Spawner : MonoBehaviour
         Vector3 spawnPos = generateNewPos();
 
         Instantiate(prefab, spawnPos, Quaternion.identity);
-
-        timer = 0;
     }
 }
