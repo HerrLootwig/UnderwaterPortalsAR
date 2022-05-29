@@ -44,11 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc4f0177b89e80441b48ea6fef100721, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.5
-  maxRange: 10
-  minRange: -10
+  moveSpeed: 0.2
+  maxRange: 5
+  minRange: -5
   timeToChangeDirection: 5
-  rotateSpeed: 0
+  rotateSpeed: 200
 --- !u!1001 &6363528445072453234
 PrefabInstance:
   m_ObjectHideFlags: 0

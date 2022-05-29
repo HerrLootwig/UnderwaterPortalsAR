@@ -15,6 +15,8 @@ public class Spawner : MonoBehaviour
 
     float timer = 0;
 
+    int numberOfObjects;
+
     private void Awake()
     {
         createObject();

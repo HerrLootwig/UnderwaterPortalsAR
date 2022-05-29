@@ -19,37 +19,26 @@ public class TrashMover : MonoBehaviour
     void Awake()
     {
         generateNewDestination();
-        changeRotation();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.Equals(newDestination))
-        {
-            generateNewDestination();
-        }
-        else
-        {
-            //transform.position = Vector3.MoveTowards(transform.position, newDestination, Time.deltaTime * moveSpeed);
-            transform.Translate(newDestination * Time.deltaTime * moveSpeed);
-        }
-
-        //transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(newRotation), Time.deltaTime * rotateSpeed);
-
+         transform.Translate(newDestination * Time.deltaTime * moveSpeed, Space.World);
+        
         Debug.Log(newDestination);
 
-        transform.GetChild(0).rotation = Quaternion.Euler(newRotation);
+        transform.rotation = Quaternion.Euler(newRotation * rotateSpeed);
         timer += Time.deltaTime;
 
         if(timer >= timeToChangeDirection)
         {
             generateNewDestination();
-            changeRotation();
-           
+            timer = 0;
         }
-        rotate();
-
+        //rotate();
+        rotation += 0.05f;
+        newRotation = new Vector3(transform.rotation.x + rotation, transform.position.y + rotation, transform.rotation.z + rotation);
 
     }
 
@@ -61,14 +50,6 @@ public class TrashMover : MonoBehaviour
 
         newDestination = new Vector3(randX, randY, randZ);
     }
-
-    void changeRotation()
-    {
-        //newRotation = new Vector3(Random.Range(-359, 359), Random.Range(-359, 359), Random.Range(-359, 359));
-        newRotation = new Vector3(transform.rotation.x, Random.Range(-359, 359), transform.rotation.z);
-
-    }
-
     void rotate()
     {
         rotation += 0.05f;
