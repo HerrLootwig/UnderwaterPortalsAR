@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TrashManager : MonoBehaviour
 {
+    [SerializeField] public GameObject prefab;
 
     public int numberOfObjects;
 

@@ -580,7 +580,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b052ff03e15a1d04b84975e907a177bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1427275806558040033, guid: ab54647a5441c864e9d9f1eabc2ac2f1, type: 3}
   maxRange: 5
   minRange: -5
   spawnTime: 2
@@ -597,6 +596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f66c0fdcda87e104b91bdc3294bffde5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefab: {fileID: 1427275806558040033, guid: ab54647a5441c864e9d9f1eabc2ac2f1, type: 3}
   numberOfObjects: 0
 --- !u!4 &212175866532230322
 Transform:

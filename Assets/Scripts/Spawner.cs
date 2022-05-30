@@ -5,7 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(TrashManager))]
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] GameObject prefab;
 
     [SerializeField] float maxRange;
     [SerializeField] float minRange;
@@ -55,6 +54,6 @@ public class Spawner : MonoBehaviour
     {
         Vector3 spawnPos = generateNewPos();
 
-        Instantiate(prefab, spawnPos, Quaternion.identity);
+        Instantiate(manager.prefab, spawnPos, Quaternion.identity);
     }
 }
