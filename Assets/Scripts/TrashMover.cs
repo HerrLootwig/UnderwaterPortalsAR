@@ -10,25 +10,30 @@ public class TrashMover : MonoBehaviour
     [SerializeField] int timeToChangeDirection;
     [SerializeField] float rotateSpeed;
 
+    GameObject controller;
+    
+
     float randX, randY, randZ;
-    Vector3 newDestination, newRotation;
+    Vector3 newDestination, newRotation, moveVector;
 
     float timer = 0;
     float rotation = 0;
 
     void Awake()
     {
-        generateNewDestination();
+            controller = GameObject.Find("TrashController");
+            generateNewDestination();
     }
 
     // Update is called once per frame
     void Update()
     {
-         transform.Translate(newDestination * Time.deltaTime * moveSpeed, Space.World);
+        transform.Translate(moveVector * Time.deltaTime * moveSpeed, Space.World);
         
         Debug.Log(newDestination);
+        Debug.Log(controller.name);
 
-        transform.rotation = Quaternion.Euler(newRotation * rotateSpeed);
+        transform.GetChild(0).rotation = Quaternion.Euler(newRotation * rotateSpeed);
         timer += Time.deltaTime;
 
         if(timer >= timeToChangeDirection)
@@ -36,7 +41,6 @@ public class TrashMover : MonoBehaviour
             generateNewDestination();
             timer = 0;
         }
-        //rotate();
         rotation += 0.05f;
         newRotation = new Vector3(transform.rotation.x + rotation, transform.position.y + rotation, transform.rotation.z + rotation);
 
@@ -44,15 +48,17 @@ public class TrashMover : MonoBehaviour
 
     void generateNewDestination()
     {
+        Vector3 controllerPos = controller.transform.position;
+
+        Vector3 myPosRelativeToController = transform.position - controllerPos;
+
         randX = Random.Range(minRange, maxRange);
         randY = Random.Range(minRange, maxRange);
         randZ = Random.Range(minRange, maxRange);
 
         newDestination = new Vector3(randX, randY, randZ);
+
+        moveVector = newDestination - myPosRelativeToController;
     }
-    void rotate()
-    {
-        rotation += 0.05f;
-        newRotation = new Vector3(transform.rotation.x + rotation, transform.position.y + rotation, transform.rotation.z + rotation);
-    }
+    
 }

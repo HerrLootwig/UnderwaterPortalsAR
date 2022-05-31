@@ -5,6 +5,7 @@ using UnityEngine;
 public class TrashManager : MonoBehaviour
 {
     [SerializeField] public GameObject prefab;
+    [SerializeField] int maxNumberObjects;
 
     public int numberOfObjects;
 
@@ -16,7 +17,7 @@ public class TrashManager : MonoBehaviour
 
     public bool allowMoreObjects()
     {
-        if(numberOfObjects < 10)
+        if(numberOfObjects < maxNumberObjects)
         {
             return true;
         }
