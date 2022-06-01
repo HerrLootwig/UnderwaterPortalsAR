@@ -133,7 +133,7 @@ MonoBehaviour:
   maxRange: 2
   minRange: -2
   timeToChangeDirection: 5
-  rotateSpeed: 10
+  rotateSpeed: 2
 --- !u!65 &5545502421256132381
 BoxCollider:
   m_ObjectHideFlags: 0

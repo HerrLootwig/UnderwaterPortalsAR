@@ -10,7 +10,6 @@ public class Spawner : MonoBehaviour
     [SerializeField] float minRange;
     [SerializeField] int spawnTime;
 
-    GameObject controller;
 
     float randX, randY, randZ;
     Vector3 newPos;
@@ -22,7 +21,6 @@ public class Spawner : MonoBehaviour
 
     private void Awake()
     {
-        controller = GameObject.Find("TrashController");
 
         manager = GetComponent<TrashManager>();
         createObject();
@@ -45,9 +43,9 @@ public class Spawner : MonoBehaviour
 
     Vector3 generateNewPos()
     {
-        randX = controller.transform.position.x + Random.Range(minRange, maxRange);
-        randY = controller.transform.position.y + Random.Range(minRange, maxRange);
-        randZ = controller.transform.position.z + Random.Range(minRange, maxRange);
+        randX = transform.position.x + Random.Range(minRange, maxRange);
+        randY = transform.position.y + Random.Range(minRange, maxRange);
+        randZ = transform.position.z + Random.Range(minRange, maxRange);
 
         newPos = new Vector3(randX, randY, randZ);
 

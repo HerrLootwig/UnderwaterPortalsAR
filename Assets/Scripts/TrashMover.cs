@@ -30,8 +30,8 @@ public class TrashMover : MonoBehaviour
     {
         transform.Translate(moveVector * Time.deltaTime * moveSpeed, Space.World);
         
-        Debug.Log(newDestination);
-        Debug.Log(controller.name);
+        //Debug.Log(newDestination);
+        //Debug.Log(controller.name);
 
         transform.GetChild(0).rotation = Quaternion.Euler(newRotation * rotateSpeed);
         timer += Time.deltaTime;
@@ -45,7 +45,7 @@ public class TrashMover : MonoBehaviour
         newRotation = new Vector3(transform.rotation.x + rotation, transform.position.y + rotation, transform.rotation.z + rotation);
 
     }
-
+    //Verhältnisse komisch, relativ zu controller evtl unnötig wegen der range
     void generateNewDestination()
     {
         Vector3 controllerPos = controller.transform.position;
