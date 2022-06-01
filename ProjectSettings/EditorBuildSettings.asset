@@ -8,12 +8,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Bennis Scene.unity
     guid: 0469465da8b69004ca312d7724d0c1e1
   - enabled: 0
     path: Assets/Scenes/Intro.unity
     guid: b64d2c188c0e4004585ac3590d1724e6
+  - enabled: 1
+    path: Assets/Scenes/Prototyp.unity
+    guid: fdaa163fa92f93c4f881c909f62abc75
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}
