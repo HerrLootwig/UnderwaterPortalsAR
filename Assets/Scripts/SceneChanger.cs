@@ -12,7 +12,7 @@ public class SceneChanger : MonoBehaviour
 
     public void LoadGameScene()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Prototyp");
         //StartCoroutine(LoadAsynchronously("Main Scene"));
 
     }
