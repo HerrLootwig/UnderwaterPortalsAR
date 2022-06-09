@@ -55,7 +55,7 @@ public class Spawner : MonoBehaviour
     void createObject()
     {
         Vector3 spawnPos = generateNewPos();
-
-        Instantiate(manager.prefab, spawnPos, Quaternion.identity);
+        manager.randomizePrefab();
+        Instantiate(manager.currentPrefab, spawnPos, Quaternion.identity);
     }
 }

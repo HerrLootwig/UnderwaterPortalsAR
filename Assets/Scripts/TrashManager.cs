@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class TrashManager : MonoBehaviour
 {
-    [SerializeField] public GameObject prefab;
+    [SerializeField] public GameObject[] prefabs;
     [SerializeField] int maxNumberObjects;
 
-    public int numberOfObjects;
+    public int numberOfObjects, rand;
+    public GameObject currentPrefab;
 
     void Awake()
     {
         numberOfObjects = 0;
+        randomizePrefab();
     }
 
 
@@ -25,6 +27,14 @@ public class TrashManager : MonoBehaviour
         {
             return false;
         }
+
+    }
+
+    public void randomizePrefab()
+    {
+        rand = Random.Range(0, prefabs.Length);
+
+        currentPrefab = prefabs[rand];
 
     }
 }

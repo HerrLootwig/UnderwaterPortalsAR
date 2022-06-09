@@ -1015,9 +1015,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f66c0fdcda87e104b91bdc3294bffde5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8677635892293032687, guid: cbea1bd0d63bf2b4e9ae1a8edfd7403e, type: 3}
+  prefabs:
+  - {fileID: 4241940649031970222, guid: a274956e9228f054cafc21563e93259b, type: 3}
+  - {fileID: 2286275682941902929, guid: a958188ea3c890348a32a88d3dcb7314, type: 3}
+  - {fileID: 9212404229504921519, guid: ab25ba12eefc51b48a7daa4bbcdb00e9, type: 3}
+  - {fileID: 8677635892293032687, guid: cbea1bd0d63bf2b4e9ae1a8edfd7403e, type: 3}
   maxNumberObjects: 6
   numberOfObjects: 0
+  rand: 0
+  currentPrefab: {fileID: 0}
 --- !u!114 &1226133950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1030,8 +1036,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b052ff03e15a1d04b84975e907a177bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxRange: 10
-  minRange: -10
+  maxRange: 2
+  minRange: -2
   spawnTime: 2
   numberOfObjects: 0
 --- !u!114 &1226133951
