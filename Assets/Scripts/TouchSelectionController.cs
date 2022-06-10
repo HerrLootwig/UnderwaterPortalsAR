@@ -10,7 +10,7 @@ public class TouchSelectionController : MonoBehaviour
 
     [SerializeField] private Camera arCamera;
     TrashManager manager;
-    private int score = 0;
+    public int score = 0;
     [SerializeField] private TMP_Text text;
 
     void Awake()

@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
+     [SerializeField] private GameObject image;
+
+    public void LoadStatics()
+    {
+        image.SetActive(true);
+    }
     public void LoadMenuScene()
     {
         SceneManager.LoadScene("Intro");
@@ -16,6 +22,7 @@ public class SceneChanger : MonoBehaviour
         //StartCoroutine(LoadAsynchronously("Main Scene"));
 
     }
+
 
    
     public void ExitGame()
