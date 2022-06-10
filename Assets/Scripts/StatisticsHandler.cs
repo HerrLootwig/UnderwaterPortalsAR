@@ -19,7 +19,8 @@ public class StatisticsHandler : MonoBehaviour
 
     public void ShowTime()
     {
-        float trashPerSecond = 14/60f;
+        
+        float trashPerSecond = 2/60f;
         float trashPerMinute = 14f;
         int minutes = Mathf.FloorToInt(timer.timer / 60F);
         int seconds = Mathf.FloorToInt(timer.timer - minutes * 60);
