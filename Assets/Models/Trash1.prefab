@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2207142909918521040}
   - component: {fileID: 8748344150002779087}
   - component: {fileID: 5565102401680673271}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Trash1
   m_TagString: Destructable
   m_Icon: {fileID: 0}
@@ -145,6 +145,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Trash1Blend
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a9fe1af475b61634b97d6cd7806eabbf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747126033187249628, guid: a9fe1af475b61634b97d6cd7806eabbf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6633956684067378922, guid: a9fe1af475b61634b97d6cd7806eabbf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836295230451199593, guid: a9fe1af475b61634b97d6cd7806eabbf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9fe1af475b61634b97d6cd7806eabbf, type: 3}
