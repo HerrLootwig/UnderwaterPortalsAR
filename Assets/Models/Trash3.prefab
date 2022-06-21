@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2891702129973212570}
   - component: {fileID: 2891702129973212569}
   - component: {fileID: 2891702129973212568}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Trash3
-  m_TagString: Untagged
+  m_TagString: Destructable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,12 +144,12 @@ PrefabInstance:
     - target: {fileID: -8391222552659086748, guid: 036dc462889852a4bbc8dcce3528ead3,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -5041572060840191357, guid: 036dc462889852a4bbc8dcce3528ead3,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 036dc462889852a4bbc8dcce3528ead3,
         type: 3}
@@ -159,22 +159,22 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 036dc462889852a4bbc8dcce3528ead3,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2174728029019402951, guid: 036dc462889852a4bbc8dcce3528ead3,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6633956684067378922, guid: 036dc462889852a4bbc8dcce3528ead3,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9219813296464784902, guid: 036dc462889852a4bbc8dcce3528ead3,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 036dc462889852a4bbc8dcce3528ead3, type: 3}

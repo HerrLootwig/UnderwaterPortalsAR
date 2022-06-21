@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Destructable
+  - Enter
+  - Leave
   layers:
   - Default
   - TransparentFX

@@ -9,8 +9,6 @@ public class TrashMover : MonoBehaviour
     [SerializeField] float minRange;
     [SerializeField] int timeToChangeDirection;
     [SerializeField] float rotateSpeed;
-
-    GameObject controller;
     
 
     float randX, randY, randZ;
@@ -19,9 +17,8 @@ public class TrashMover : MonoBehaviour
     float timer = 0;
     float rotation = 0;
 
-    void Awake()
+    void Start()
     {
-            controller = GameObject.Find("TrashController");
             generateNewDestination();
     }
 
@@ -48,7 +45,9 @@ public class TrashMover : MonoBehaviour
     //Verhältnisse komisch, relativ zu controller evtl unnötig wegen der range
     void generateNewDestination()
     {
-        Vector3 controllerPos = controller.transform.position;
+        Debug.Log(transform.parent.name);
+        Vector3 controllerPos = transform.parent.position;
+
 
         Vector3 myPosRelativeToController = transform.position - controllerPos;
 

@@ -56,6 +56,8 @@ public class Spawner : MonoBehaviour
     {
         Vector3 spawnPos = generateNewPos();
         manager.randomizePrefab();
-        Instantiate(manager.currentPrefab, spawnPos, Quaternion.identity);
+        GameObject newby = Instantiate(manager.currentPrefab, spawnPos, Quaternion.identity);
+        newby.transform.parent = manager.transform;
+        newby.GetComponent<TrashMover>().enabled = true;
     }
 }

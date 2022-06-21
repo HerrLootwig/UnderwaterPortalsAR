@@ -16,6 +16,8 @@ public class AppLoader : MonoBehaviour
 
     IEnumerator LoadAsync()
     {
+        yield return new WaitForSeconds(2);
+
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
 
         while (!operation.isDone)

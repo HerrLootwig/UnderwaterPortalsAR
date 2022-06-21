@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7521575054049323544}
   - component: {fileID: 8609833301921204465}
   - component: {fileID: 632941680232861297}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: PlastiktueteGeknullt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 3637111228011142224}
   - component: {fileID: 6049126083543658924}
   - component: {fileID: 5545502421256132381}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: TrashPlasticBag
   m_TagString: Destructable
   m_Icon: {fileID: 0}
