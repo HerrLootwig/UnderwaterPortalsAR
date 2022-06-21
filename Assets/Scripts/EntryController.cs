@@ -38,7 +38,6 @@ public class EntryController : MonoBehaviour
             //Finde die zum Portal gehörige Sphere, um die Ansicht umschalten zu können
              sphere = other.transform.parent.parent.GetChild(0).gameObject;
              sphere.layer = 0;
-             Debug.Log("entry " + sphere.name);
 
             //Aktiviere das Spawnen und Verteilen vom Müll im richtigen Portal
             trashController = other.transform.parent.parent.GetChild(2).gameObject;
