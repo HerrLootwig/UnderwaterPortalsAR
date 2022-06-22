@@ -9,21 +9,13 @@ public class TouchSelectionController : MonoBehaviour
 {
 
     [SerializeField] private Camera arCamera;
+    [SerializeField] private ScoreHandler scoreHandler;
     TrashManager manager;
-    public int score = 0;
-    [SerializeField] private TMP_Text text;
+    
 
     void Awake()
     {
         manager = GetComponent<TrashManager>();
-    }
-
-    //erhöt score beim sammeln von müll um 1
-    private void ShowScore(int score)
-    {
-        score += 1;
-        text.text = score.ToString();
-
     }
 
     // Update is called once per frame
@@ -44,7 +36,7 @@ public class TouchSelectionController : MonoBehaviour
                     {
                         Destroy(hitGameObject);
                         manager.numberOfObjects--;
-                        ShowScore(score);
+                        scoreHandler.ShowScore();
                     }
                 }
             }

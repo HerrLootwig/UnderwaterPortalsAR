@@ -5,11 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
-     [SerializeField] private GameObject image;
+    [SerializeField] private GameObject statistics;
+    [SerializeField] private GameObject runtimeLabels;
 
     public void LoadStatics()
     {
-        image.SetActive(true);
+        statistics.SetActive(true);
+        statistics.GetComponent<StatisticsHandler>().ShowTime();
+        runtimeLabels.SetActive(false);
+
     }
     public void LoadMenuScene()
     {
@@ -21,6 +25,12 @@ public class SceneChanger : MonoBehaviour
         SceneManager.LoadScene("Prototyp");
         //StartCoroutine(LoadAsynchronously("Main Scene"));
 
+    }
+
+    public void back()
+    {
+        statistics.SetActive(false);
+        runtimeLabels.SetActive(true);
     }
 
 

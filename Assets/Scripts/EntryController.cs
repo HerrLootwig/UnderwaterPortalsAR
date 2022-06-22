@@ -29,7 +29,7 @@ public class EntryController : MonoBehaviour
             enter.isTrigger = true;
 
             //Der Infobutton wird deaktiviert
-            GameObject.Find("Canvas").transform.GetChild(4).gameObject.SetActive(false);
+            GameObject.Find("Canvas").transform.GetChild(3).gameObject.SetActive(false);
 
         }
 
@@ -68,7 +68,7 @@ public class EntryController : MonoBehaviour
             }
 
             //Der Infobutton wird aktiviert
-            GameObject.Find("Canvas").transform.GetChild(4).gameObject.SetActive(true);
+            GameObject.Find("Canvas").transform.GetChild(3).gameObject.SetActive(true);
         }
 
 

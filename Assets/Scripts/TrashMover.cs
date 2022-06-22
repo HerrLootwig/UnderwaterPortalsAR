@@ -45,7 +45,6 @@ public class TrashMover : MonoBehaviour
     //Verhältnisse komisch, relativ zu controller evtl unnötig wegen der range
     void generateNewDestination()
     {
-        Debug.Log(transform.parent.name);
         Vector3 controllerPos = transform.parent.position;
 
 
