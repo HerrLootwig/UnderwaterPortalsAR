@@ -30,6 +30,10 @@ public class EntryController : MonoBehaviour
 
             //Der Infobutton wird deaktiviert
             GameObject.Find("Canvas").transform.GetChild(3).gameObject.SetActive(false);
+            //Info Panel wird ausgeblendet
+            GameObject.Find("Canvas").transform.GetChild(2).gameObject.SetActive(false);
+
+
 
         }
 
