@@ -138,7 +138,6 @@ GameObject:
   - component: {fileID: 22732922}
   - component: {fileID: 22732921}
   - component: {fileID: 22732925}
-  - component: {fileID: 22732927}
   m_Layer: 0
   m_Name: AR Camera
   m_TagString: MainCamera
@@ -287,18 +286,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!114 &22732927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 22732919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d2cc76f03f341e45861a4a83c29b2e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &82464785
 GameObject:
   m_ObjectHideFlags: 0
@@ -1724,6 +1711,7 @@ GameObject:
   m_Component:
   - component: {fileID: 705507995}
   - component: {fileID: 705507994}
+  - component: {fileID: 705507996}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1808,6 +1796,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &705507996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705507993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &724435375
 GameObject:
   m_ObjectHideFlags: 0
@@ -3953,7 +3961,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 492082944}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: back
+        m_MethodName: Back
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4152,7 +4160,7 @@ GameObject:
   - component: {fileID: 1630360971}
   - component: {fileID: 1630360970}
   m_Layer: 5
-  m_Name: ExitButton
+  m_Name: Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4225,7 +4233,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 492082944}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: LoadStatics
+        m_MethodName: LoadStatistics
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
