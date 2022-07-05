@@ -43,6 +43,7 @@ public class Spawner : MonoBehaviour
 
     Vector3 generateNewPos()
     {
+        //Auf alte Werte Random Wert rauf rechnen
         randX = transform.position.x + Random.Range(minRange, maxRange);
         randY = transform.position.y + Random.Range(minRange, maxRange);
         randZ = transform.position.z + Random.Range(minRange, maxRange);
@@ -52,10 +53,12 @@ public class Spawner : MonoBehaviour
         return newPos;
     }
 
+    //erzeugt ein zufälliges Müll Objekt
     void createObject()
     {
         Vector3 spawnPos = generateNewPos();
         manager.randomizePrefab();
+
         GameObject newby = Instantiate(manager.currentPrefab, spawnPos, Quaternion.identity);
         newby.transform.parent = manager.transform;
         newby.GetComponent<TrashMover>().enabled = true;

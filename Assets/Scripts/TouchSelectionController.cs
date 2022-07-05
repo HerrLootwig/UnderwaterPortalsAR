@@ -11,7 +11,7 @@ public class TouchSelectionController : MonoBehaviour
     [SerializeField] private Camera arCamera;
     [SerializeField] private ScoreHandler scoreHandler;
     TrashManager manager;
-    
+
 
     void Awake()
     {
@@ -25,14 +25,17 @@ public class TouchSelectionController : MonoBehaviour
         {
             Touch touch = Input.GetTouch(0);
 
-            if(touch.phase == TouchPhase.Began)
+            if (touch.phase == TouchPhase.Began)
             {
+                //erstellt von Kamera in Tipp Richtung
                 Ray ray = arCamera.ScreenPointToRay(touch.position);
                 RaycastHit hitObject;
-                if(Physics.Raycast(ray, out hitObject))
+
+                //Wenn der Ray Müll trifft, wird Score hochgezählt und das Objekt zerstört
+                if (Physics.Raycast(ray, out hitObject))
                 {
                     GameObject hitGameObject = hitObject.transform.gameObject;
-                    if(hitGameObject.tag.Equals("Destructable"))
+                    if (hitGameObject.tag.Equals("Destructable"))
                     {
                         Destroy(hitGameObject);
                         manager.numberOfObjects--;

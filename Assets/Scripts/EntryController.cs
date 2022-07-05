@@ -6,19 +6,19 @@ public class EntryController : MonoBehaviour
 {
     GameObject sphere;
     GameObject trashController;
-    
+
     private void OnTriggerEnter(Collider other)
     {
-         if (other.gameObject.CompareTag("Leave"))
-         {
+        if (other.gameObject.CompareTag("Leave"))
+        {
             //Finde die zum Portal gehörige Sphere, um die Ansicht umschalten zu können
-             sphere = other.transform.parent.parent.GetChild(0).gameObject;
-             sphere.layer = 10;
-             Debug.Log("exit");
+            sphere = other.transform.parent.parent.GetChild(0).gameObject;
+            sphere.layer = 10;
+            Debug.Log("exit");
 
             //Deaktiviere das Spawnen und Verteilen vom Müll im richtigen Portal
-             trashController = other.transform.parent.parent.GetChild(2).gameObject;
-             trashController.SetActive(false);
+            trashController = other.transform.parent.parent.GetChild(2).gameObject;
+            trashController.SetActive(false);
 
             //Der Leave-Collider wird deaktiviert 
             BoxCollider leave = other.gameObject.GetComponent<BoxCollider>();
@@ -30,6 +30,7 @@ public class EntryController : MonoBehaviour
 
             //Der Infobutton wird deaktiviert
             GameObject.Find("Canvas").transform.GetChild(3).gameObject.SetActive(false);
+
             //Info Panel wird ausgeblendet
             GameObject.Find("Canvas").transform.GetChild(2).gameObject.SetActive(false);
 
@@ -37,11 +38,11 @@ public class EntryController : MonoBehaviour
 
         }
 
-         if (other.gameObject.CompareTag("Enter"))
-         {
+        if (other.gameObject.CompareTag("Enter"))
+        {
             //Finde die zum Portal gehörige Sphere, um die Ansicht umschalten zu können
-             sphere = other.transform.parent.parent.GetChild(0).gameObject;
-             sphere.layer = 0;
+            sphere = other.transform.parent.parent.GetChild(0).gameObject;
+            sphere.layer = 0;
 
             //Aktiviere das Spawnen und Verteilen vom Müll im richtigen Portal
             trashController = other.transform.parent.parent.GetChild(2).gameObject;
@@ -76,67 +77,9 @@ public class EntryController : MonoBehaviour
         }
 
 
-        
+
 
     }
-
-    /*private void Update()
-    {
-        if ((transform.position.x >= portal1.x ||
-            transform.position.x <= portal3.x ||
-            transform.position.z >= portal2.z ||
-            transform.position.z <= portal4.z) && !insidePortal)
-        {
-            sphere.layer = 0;
-            Debug.Log("entry");
-
-            trashController.SetActive(true);
-            insidePortal = true;
-        }
-
-        if ((transform.position.x <= portal1.x ||
-            transform.position.x >= portal3.x ||
-            transform.position.z <= portal2.z ||
-            transform.position.z >= portal4.z) && insidePortal)
-        {
-            sphere.layer = 10;
-            Debug.Log("exit");
-
-            trashController.SetActive(false);
-            insidePortal = false;
-        }
-
-        if((transform.position.x >= portal1.x) && !insidePortal)
-        {
-            sphere = GameObject.Find("Sphere1");
-            sphere.layer = 0;
-            Debug.Log("entry");
-
-            trashController.SetActive(true);
-            insidePortal = true;
-        }
-
-        if ((transform.position.x >= portal1.x) && !insidePortal)
-        {
-            sphere = GameObject.Find("Sphere1");
-            sphere.layer = 0;
-            Debug.Log("entry");
-
-            trashController.SetActive(true);
-            insidePortal = true;
-        }
-
-    }*/
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    if (other.gameObject.CompareTag("MainCamera") && insidePortal)
-    //    {
-    //        sphere.layer = 10;
-    //        insidePortal = false;
-    //    }
-    //}
-
-
 
 
 

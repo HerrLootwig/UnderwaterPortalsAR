@@ -9,7 +9,7 @@ public class TrashMover : MonoBehaviour
     [SerializeField] float minRange;
     [SerializeField] int timeToChangeDirection;
     [SerializeField] float rotateSpeed;
-    
+
 
     float randX, randY, randZ;
     Vector3 newDestination, newRotation, moveVector;
@@ -19,30 +19,34 @@ public class TrashMover : MonoBehaviour
 
     void Start()
     {
-            generateNewDestination();
+        generateNewDestination();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Bewegung mit Einberechunung der Delta Time damit Fps unabhängigkeit gegeben ist
         transform.Translate(moveVector * Time.deltaTime * moveSpeed, Space.World);
-        
-        //Debug.Log(newDestination);
-        //Debug.Log(controller.name);
 
+        //Rotation des Müllstücks
         transform.GetChild(0).rotation = Quaternion.Euler(newRotation * rotateSpeed);
+
+        //Zeit rauf rechnen
         timer += Time.deltaTime;
 
-        if(timer >= timeToChangeDirection)
+        //Nach bestimmter Zeit randomisierter Richtungswechsel
+        if (timer >= timeToChangeDirection)
         {
             generateNewDestination();
             timer = 0;
         }
+
         rotation += 0.05f;
         newRotation = new Vector3(transform.rotation.x + rotation, transform.position.y + rotation, transform.rotation.z + rotation);
 
     }
-    //Verhältnisse komisch, relativ zu controller evtl unnötig wegen der range
+    
+    //Neues Ziel für Müllstück berechnen
     void generateNewDestination()
     {
         Vector3 controllerPos = transform.parent.position;
@@ -58,5 +62,5 @@ public class TrashMover : MonoBehaviour
 
         moveVector = newDestination - myPosRelativeToController;
     }
-    
+
 }

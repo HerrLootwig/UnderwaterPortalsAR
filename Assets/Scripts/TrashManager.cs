@@ -16,10 +16,10 @@ public class TrashManager : MonoBehaviour
         randomizePrefab();
     }
 
-
+    //Reguliert die Müll Anzahl
     public bool allowMoreObjects()
     {
-        if(numberOfObjects < maxNumberObjects)
+        if (numberOfObjects < maxNumberObjects)
         {
             return true;
         }
@@ -30,6 +30,7 @@ public class TrashManager : MonoBehaviour
 
     }
 
+    //Zuständig für zufällige Auswahl des Müll 3D-Objekts
     public void randomizePrefab()
     {
         rand = Random.Range(0, prefabs.Length);
