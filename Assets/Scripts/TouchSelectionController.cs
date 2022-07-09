@@ -27,7 +27,7 @@ public class TouchSelectionController : MonoBehaviour
 
             if (touch.phase == TouchPhase.Began)
             {
-                //erstellt von Kamera in Tipp Richtung
+                //erstellt Ray von Kamera in Tipp Richtung
                 Ray ray = arCamera.ScreenPointToRay(touch.position);
                 RaycastHit hitObject;
 

@@ -17,10 +17,10 @@ public class StatisticsHandler : MonoBehaviour
 
     public void ShowTime()
     {
-
-        float trashPerSecond = 2 / 60f;
-        float trashPerMinute = 14f;
-        int minutes = Mathf.FloorToInt(timer.timer / 60F);
+        //4,8 Mio - 12,7 Mio Tonnen Müll pro Jahr = Mittelwert 8,75 Mio Tonnen, TrashPerMinute = 8,75 Mio/36/24/60 = 16,65 Tonnen
+        float trashPerMinute = 16.65f;
+        float trashPerSecond = trashPerMinute / 60f;
+        int minutes = Mathf.FloorToInt(timer.timer / 60);
         int seconds = Mathf.FloorToInt(timer.timer - minutes * 60);
 
         if (minutes > 0)

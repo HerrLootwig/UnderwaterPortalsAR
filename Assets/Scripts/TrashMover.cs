@@ -25,7 +25,7 @@ public class TrashMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Bewegung mit Einberechunung der Delta Time damit Fps unabhängigkeit gegeben ist
+        //Bewegung mit Einberechunung der Delta Time damit Fps-Unabhängigkeit gegeben ist
         transform.Translate(moveVector * Time.deltaTime * moveSpeed, Space.World);
 
         //Rotation des Müllstücks
@@ -34,7 +34,7 @@ public class TrashMover : MonoBehaviour
         //Zeit rauf rechnen
         timer += Time.deltaTime;
 
-        //Nach bestimmter Zeit randomisierter Richtungswechsel
+        //Nach bestimmter Zeit zufälliger Richtungswechsel
         if (timer >= timeToChangeDirection)
         {
             generateNewDestination();

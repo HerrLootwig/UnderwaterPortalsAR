@@ -35,7 +35,6 @@ public class EntryController : MonoBehaviour
             GameObject.Find("Canvas").transform.GetChild(2).gameObject.SetActive(false);
 
 
-
         }
 
         if (other.gameObject.CompareTag("Enter"))
@@ -75,8 +74,6 @@ public class EntryController : MonoBehaviour
             //Der Infobutton wird aktiviert
             GameObject.Find("Canvas").transform.GetChild(3).gameObject.SetActive(true);
         }
-
-
 
 
     }
